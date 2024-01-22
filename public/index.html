@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+
+<div id="employeeList">
+    <h2>Employee List</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Area</th>
+            <th>Contact No</th>
+            <th>Experience Year</th>
+        </tr>
+        </thead>
+        <tbody id="employeeTableBody"></tbody>
+    </table>
+</div>
+
+<div id="employeeDetails" style="display: none;">
+    <h2>Employee Details</h2>
+    <div>
+        <label>Name: </label><span id="detailName"></span><br>
+        <label>Area: </label><span id="detailArea"></span><br>
+        <label>Contact No: </label><span id="detailContactNo"></span><br>
+        <label>Experience Year: </label><span id="detailExperience"></span><br>
+    </div>
+    <button onclick="editEmployee()">Edit</button>
+    <button onclick="deleteEmployee()">Delete</button>
+</div>
+
+<div id="editForm" style="display: none;">
+    <h2>Employee Details</h2>
+    <form onsubmit="saveEmployee(); return false;">
+        <label>Name: </label><input type="text" id="editName" required><br>
+        <label>Area: </label><input type="text" id="editArea" required><br>
+        <label>Contact No: </label><input type="text" id="editContactNo" required><br>
+        <label>Experience Year: </label><input type="number" id="editExperience" required><br>
+        <button type="submit">Save</button>
+        <button onclick="cancelEdit()">Cancel</button>
+    </form>
+</div>
+
+<div id="deletePopup" class="popup">
+    <p>Are you sure you want to delete this item?</p>
+    <button onclick="confirmDelete()">Yes</button>
+    <button onclick="cancelDelete()">Cancel</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
